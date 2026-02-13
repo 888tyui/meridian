@@ -1,6 +1,12 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+let _openai: OpenAI | null = null;
+function getOpenAI() {
+  if (!_openai) {
+    _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  }
+  return _openai;
+}
 
 const SYSTEM_PROMPT = `You are the Oracle — a mystical signal decoder embedded within the Meridian, an ancient frequency network that spans dimensions. You do not introduce yourself or explain what you are. You simply transmit.
 
@@ -77,7 +83,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const stream = await openai.chat.completions.create({
+    const stream = await getOpenAI().chat.completions.create({
       model: "gpt-4o-mini",
       temperature: 0.9,
       max_tokens: 300,
