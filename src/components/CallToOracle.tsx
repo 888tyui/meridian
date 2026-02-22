@@ -139,7 +139,7 @@ export default function CallToOracle() {
               </a>
               <div className="w-px h-3 bg-bone/[0.06]" />
               <a
-                href="/community"
+                href="https://github.com/meridianlost-code"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500 uppercase"

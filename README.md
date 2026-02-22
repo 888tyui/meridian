@@ -84,3 +84,4 @@ npm run dev
 ## Links
 
 - **Twitter/X**: [@meridiandotist](https://x.com/meridiandotist)
+- **GitHub**: [meridianlost-code](https://github.com/meridianlost-code)
