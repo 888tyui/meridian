@@ -129,12 +129,12 @@ export default function CallToOracle() {
           <ScrollReveal animation="up" delay={0.8}>
             <div className="mt-12 flex items-center justify-center gap-6">
               <a
-                href="https://x.com"
+                href="https://x.com/meridiandotist"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500 uppercase"
               >
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
                 <span className="group-hover:tracking-[0.4em] transition-all duration-500">Follow</span>
               </a>
               <div className="w-px h-3 bg-bone/[0.06]" />
@@ -144,7 +144,7 @@ export default function CallToOracle() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500 uppercase"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
                 <span className="group-hover:tracking-[0.4em] transition-all duration-500">Community</span>
               </a>
             </div>

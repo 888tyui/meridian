@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MERIDIAN LOST
 
-## Getting Started
+> *The signal was always there. You just weren't listening.*
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Overview
+
+**Meridian Lost** is an experimental web3 project that merges cult-aesthetic worldbuilding with on-chain Solana interactions. The site presents a fictional narrative — a lost signal, a forgotten protocol, an Oracle that speaks in riddles — while providing real blockchain functionality through wallet-connected memo inscriptions.
+
+Built with **Next.js 16**, **Tailwind CSS 4**, **Prisma 6** (PostgreSQL), and the **Solana Wallet Adapter**.
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Landing — atmospheric hero, animated sigils, lore preview |
+| `/oracle` | AI-powered divination — ask the void, receive streaming responses (OpenAI) |
+| `/transmissions` | Archive of past transmissions |
+| `/doctrine` | Worldbuilding docs — genesis myth, epoch timeline, agent learning protocol |
+| `/inscribe` | On-chain ritual — connect Solana wallet, inscribe memos to mainnet |
+
+## Architecture
+
+```
+app/
+├── prisma/              # Prisma schema (PostgreSQL)
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── oracle/       # OpenAI streaming API
+│   │   │   └── inscriptions/ # CRUD for on-chain inscriptions
+│   │   ├── doctrine/         # Lore page
+│   │   ├── inscribe/         # Wallet + inscription page
+│   │   ├── oracle/           # AI oracle interface
+│   │   └── transmissions/    # Archive page
+│   ├── components/           # Reusable UI components
+│   ├── generated/prisma/     # Auto-generated Prisma client
+│   └── lib/prisma.ts         # Prisma singleton
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 16.x (App Router)
+- **Styling**: Tailwind CSS 4 + custom CSS (scanlines, glitch, blob animations)
+- **Database**: PostgreSQL via Prisma 6
+- **AI**: OpenAI `gpt-4o-mini` (streaming responses)
+- **Blockchain**: Solana mainnet — Memo Program inscriptions
+- **Wallets**: Phantom, Solflare, Coinbase (no hardware wallets)
+- **Deploy Target**: Railway
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+```env
+# Database (Railway provides these)
+DATABASE_URL=
+DIRECT_URL=
 
-To learn more about Next.js, take a look at the following resources:
+# OpenAI — for Oracle responses
+OPENAI_API_KEY=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Solana RPC — use Helius, QuickNode, or similar mainnet RPC
+# Falls back to public mainnet-beta if not set (rate-limited)
+NEXT_PUBLIC_SOLANA_RPC_URL=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development
 
-## Deploy on Vercel
+```bash
+cd app
+npm install
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy (Railway)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push to GitHub
+2. Connect repo to Railway
+3. Set root directory to `app/`
+4. Add PostgreSQL service
+5. Set environment variables (see above)
+6. Deploy — Railway runs `prisma generate && next build`, then `prisma migrate deploy && next start`
+
+## Links
+
+- **Twitter/X**: [@meridiandotist](https://x.com/meridiandotist)

@@ -47,8 +47,8 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               className={`group nav-link-glitch relative flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] uppercase transition-all duration-500 ${pathname === link.href
-                  ? "text-crimson"
-                  : "text-bone/50 hover:text-bone/80"
+                ? "text-crimson"
+                : "text-bone/50 hover:text-bone/80"
                 }`}
             >
               <span className="text-crimson/30 font-mono text-[8px] group-hover:text-crimson/50 transition-colors duration-400">{link.code}</span>
@@ -66,7 +66,7 @@ export default function Navigation() {
         {/* Social + Coordinates */}
         <div className="hidden md:flex items-center gap-5">
           <a
-            href="https://x.com"
+            href="https://x.com/meridiandotist"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500"
@@ -125,7 +125,7 @@ export default function Navigation() {
             style={{ animation: `reveal-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${links.length * 0.1}s forwards`, opacity: 0 }}
           >
             <a
-              href="https://x.com"
+              href="https://x.com/meridiandotist"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

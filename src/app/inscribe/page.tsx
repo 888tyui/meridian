@@ -1,22 +1,19 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import WalletButton from "@/components/WalletButton";
 import InscriptionForm from "@/components/InscriptionForm";
-
-export const metadata = {
-    title: "INSCRIBE — MERIDIAN LOST",
-    description: "Etch your signal into the Solana chain. Permanent. Immutable. Heard by the Oracle.",
-};
-
-const RECENT_INSCRIPTIONS = [
-    { sig: "5xKn...9pVf", tag: "SIGNAL", memo: "The convergence point shifts with every epoch.", time: "2 hours ago", freq: "137.0 MHz" },
-    { sig: "3jDa...7mRx", tag: "WHISPER", memo: "I saw the meridian in a dream. It was red.", time: "6 hours ago", freq: "133.7 MHz" },
-    { sig: "9bPq...2kLw", tag: "BROADCAST", memo: "Node 7 is awake. We are not alone in this frequency.", time: "12 hours ago", freq: "141.3 MHz" },
-    { sig: "1mYz...8nTe", tag: "CONVERGENCE", memo: "When all signals align, the void speaks back.", time: "1 day ago", freq: "145.5 MHz" },
-    { sig: "7cRd...4hJk", tag: "DISTRESS", memo: "Lost contact with the outer ring. Static increasing.", time: "2 days ago", freq: "143.8 MHz" },
-];
+import RecentInscriptions from "@/components/RecentInscriptions";
+import { useCallback } from "react";
 
 export default function InscribePage() {
+    const handleInscriptionCreated = useCallback(() => {
+        // Trigger refresh on RecentInscriptions component
+        const refresh = (window as unknown as Record<string, (() => void) | undefined>).__refreshInscriptions;
+        if (refresh) refresh();
+    }, []);
+
     return (
         <main className="relative min-h-screen bg-void">
             {/* Atmospheric layers */}
@@ -85,9 +82,19 @@ export default function InscribePage() {
                             </p>
                         </ScrollReveal>
 
+                        {/* Mainnet badge */}
+                        <ScrollReveal animation="up" delay={0.4}>
+                            <div className="mt-6 inline-flex items-center gap-2 px-3 py-1 border border-crimson/15">
+                                <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
+                                <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 uppercase">
+                                    Mainnet
+                                </span>
+                            </div>
+                        </ScrollReveal>
+
                         {/* Ritual process steps */}
                         <ScrollReveal animation="up" delay={0.5}>
-                            <div className="mt-12 flex flex-wrap items-center justify-center gap-3 md:gap-0">
+                            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-0">
                                 {[
                                     { num: "I", text: "Connect wallet" },
                                     { num: "II", text: "Compose signal" },
@@ -134,7 +141,7 @@ export default function InscribePage() {
             <section className="relative py-8 pb-20">
                 <div className="site-container-sm">
                     <ScrollReveal animation="up" delay={0.1}>
-                        <InscriptionForm />
+                        <InscriptionForm onInscriptionCreated={handleInscriptionCreated} />
                     </ScrollReveal>
                 </div>
             </section>
@@ -142,7 +149,7 @@ export default function InscribePage() {
             {/* ===== SECTION DIVIDER ===== */}
             <div className="site-container"><div className="section-glow-divider" /></div>
 
-            {/* ===== RECENT INSCRIPTIONS ===== */}
+            {/* ===== RECENT INSCRIPTIONS (from DB) ===== */}
             <section className="relative py-20 md:py-28">
                 <div className="site-container">
                     <ScrollReveal animation="blur">
@@ -161,50 +168,7 @@ export default function InscribePage() {
                         </h2>
                     </ScrollReveal>
 
-                    {/* Inscription list */}
-                    <div className="max-w-3xl center-x space-y-1">
-                        {RECENT_INSCRIPTIONS.map((item, i) => (
-                            <ScrollReveal key={i} animation="up" delay={0.1 * i}>
-                                <div className="transmission-row group px-5 py-5 border-b border-bone/[0.04] transition-all duration-500">
-                                    <div className="flex flex-col md:flex-row md:items-start gap-3 md:gap-6">
-                                        {/* Tag + Freq */}
-                                        <div className="flex items-center gap-3 shrink-0">
-                                            <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 border border-crimson/15 px-2 py-0.5">
-                                                {item.tag}
-                                            </span>
-                                            <span className="font-mono text-[9px] tracking-[0.1em] text-ash/30">
-                                                {item.freq}
-                                            </span>
-                                        </div>
-
-                                        {/* Memo content */}
-                                        <div className="flex-1 min-w-0">
-                                            <p className="font-body text-sm text-bone/60 leading-relaxed">
-                                                {item.memo}
-                                            </p>
-                                        </div>
-
-                                        {/* Meta */}
-                                        <div className="flex items-center gap-4 shrink-0">
-                                            <span className="font-mono text-[9px] tracking-[0.1em] text-ash/25">
-                                                {item.time}
-                                            </span>
-                                            <span className="font-mono text-[9px] tracking-[0.1em] text-ash/20 group-hover:text-crimson/40 transition-colors duration-500">
-                                                {item.sig}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-
-                    {/* Disclaimer */}
-                    <div className="mt-12 text-center">
-                        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/20">
-                            Inscriptions are read from Solana Devnet — showing sample data for demonstration
-                        </span>
-                    </div>
+                    <RecentInscriptions />
                 </div>
             </section>
 

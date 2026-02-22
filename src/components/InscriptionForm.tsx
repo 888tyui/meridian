@@ -21,10 +21,15 @@ type TxState =
     | { status: "idle" }
     | { status: "signing" }
     | { status: "confirming" }
+    | { status: "saving" }
     | { status: "confirmed"; signature: string }
     | { status: "error"; message: string };
 
-export default function InscriptionForm() {
+interface InscriptionFormProps {
+    onInscriptionCreated?: () => void;
+}
+
+export default function InscriptionForm({ onInscriptionCreated }: InscriptionFormProps) {
     const { publicKey, sendTransaction, connected } = useWallet();
     const { connection } = useConnection();
     const [memo, setMemo] = useState("");
@@ -56,14 +61,35 @@ export default function InscriptionForm() {
 
             await connection.confirmTransaction(signature, "confirmed");
 
+            // Save to DB
+            setTxState({ status: "saving" });
+
+            try {
+                await fetch("/api/inscriptions", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        wallet: publicKey.toBase58(),
+                        memo: memo.trim(),
+                        tag: tag.label,
+                        freq: tag.freq,
+                        signature,
+                    }),
+                });
+            } catch {
+                // DB save failure is non-critical — tx already confirmed on chain
+                console.warn("Failed to save inscription to DB, but tx is confirmed.");
+            }
+
             setTxState({ status: "confirmed", signature });
             setMemo("");
+            onInscriptionCreated?.();
         } catch (err: unknown) {
             const message =
                 err instanceof Error ? err.message : "Unknown transmission failure";
             setTxState({ status: "error", message });
         }
-    }, [publicKey, connected, memo, tag, sendTransaction, connection]);
+    }, [publicKey, connected, memo, tag, sendTransaction, connection, onInscriptionCreated]);
 
     const resetState = useCallback(() => {
         setTxState({ status: "idle" });
@@ -116,9 +142,9 @@ export default function InscriptionForm() {
                         cycle.
                     </p>
 
-                    {/* Transaction link */}
+                    {/* Transaction link — mainnet */}
                     <a
-                        href={`https://explorer.solana.com/tx/${txState.signature}?cluster=devnet`}
+                        href={`https://explorer.solana.com/tx/${txState.signature}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-crimson/60 hover:text-crimson transition-all duration-500"
@@ -165,9 +191,18 @@ export default function InscriptionForm() {
         );
     }
 
-    /* --- SIGNING / CONFIRMING STATE --- */
+    /* --- SIGNING / CONFIRMING / SAVING STATE --- */
     const isProcessing =
-        txState.status === "signing" || txState.status === "confirming";
+        txState.status === "signing" || txState.status === "confirming" || txState.status === "saving";
+
+    const statusText = {
+        signing: "Awaiting Signature...",
+        confirming: "Confirming on Chain...",
+        saving: "Recording Signal...",
+        idle: "",
+        confirmed: "",
+        error: "",
+    }[txState.status];
 
     return (
         <div className={`inscription-form ${isProcessing ? "oracle-channeling" : ""}`}>
@@ -181,9 +216,7 @@ export default function InscriptionForm() {
                             </div>
                         </div>
                         <span className="font-mono text-[10px] tracking-[0.4em] text-crimson/60 uppercase animate-flicker">
-                            {txState.status === "signing"
-                                ? "Awaiting Signature..."
-                                : "Confirming on Chain..."}
+                            {statusText}
                         </span>
 
                         {/* Scan line during processing */}
