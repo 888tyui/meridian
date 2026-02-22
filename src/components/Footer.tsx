@@ -30,6 +30,8 @@ export default function Footer() {
               <a href="/" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Origin</a>
               <a href="/transmissions" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Transmissions</a>
               <a href="/oracle" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Oracle</a>
+              <a href="/doctrine" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Doctrine</a>
+              <a href="/inscribe" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Inscribe</a>
             </div>
           </div>
 

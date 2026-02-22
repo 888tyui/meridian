@@ -5,6 +5,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import CustomCursor from "@/components/CustomCursor";
 import EntranceRitual from "@/components/EntranceRitual";
+import WalletProvider from "@/components/WalletProvider";
 
 const bitroad = localFont({
   src: "./fonts/Bitroad-Italic.woff2",
@@ -44,8 +45,10 @@ export default function RootLayout({
         <div className="vignette" />
         <CustomCursor />
         <EntranceRitual />
-        <Navigation />
-        {children}
+        <WalletProvider>
+          <Navigation />
+          {children}
+        </WalletProvider>
       </body>
     </html>
   );

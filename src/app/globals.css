@@ -761,3 +761,81 @@ body {
 }
 .oracle-textarea::-webkit-scrollbar { display: none; }
 .oracle-textarea:focus { outline: none; }
+
+/* ===== WALLET ADAPTER OVERRIDES ===== */
+.wallet-adapter-modal-wrapper {
+  background: var(--bg-void) !important;
+  border: 1px solid rgba(220, 38, 38, 0.15) !important;
+}
+.wallet-adapter-modal-title {
+  font-family: var(--font-bitroad) !important;
+  letter-spacing: 0.2em !important;
+  color: var(--bone) !important;
+}
+.wallet-adapter-modal-list li {
+  background: var(--bg-surface) !important;
+  border: 1px solid rgba(232, 228, 224, 0.04) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.wallet-adapter-modal-list li:hover {
+  background: var(--bg-elevated) !important;
+  border-color: rgba(220, 38, 38, 0.15) !important;
+}
+.wallet-adapter-button {
+  font-family: var(--font-bitroad-mono), monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--bone) !important;
+}
+.wallet-adapter-modal-button-close {
+  background: var(--bg-elevated) !important;
+}
+.wallet-adapter-modal-button-close:hover {
+  background: rgba(220, 38, 38, 0.2) !important;
+}
+.wallet-adapter-modal-overlay {
+  background: rgba(10, 10, 10, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* ===== WALLET BTN ===== */
+.wallet-btn {
+  position: relative;
+}
+.wallet-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(220, 38, 38, 0.04), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.wallet-btn:hover::after {
+  opacity: 1;
+}
+
+/* ===== INSCRIPTION FORM ===== */
+.inscription-form {
+  position: relative;
+}
+.inscription-confirmed,
+.inscription-error {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+.inscription-confirmed > div,
+.inscription-error > div {
+  width: 100%;
+}
+
+/* ===== TX STATUS PULSE ===== */
+@keyframes tx-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.2); }
+  50% { box-shadow: 0 0 30px 4px rgba(220, 38, 38, 0.1); }
+}
+.tx-pending {
+  animation: tx-pulse 1.5s ease-in-out infinite;
+}
+
