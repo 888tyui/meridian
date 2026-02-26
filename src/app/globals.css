@@ -17,9 +17,9 @@
  *   Lv2 (body):              bone/80    rgba(232,228,224,0.8)
  *   Lv3 (secondary):         bone/60    rgba(232,228,224,0.6)
  *   Lv4 (muted/label):       ash        #6B6B6B   — contrast 4.3:1
- *   Lv5 (decorative meta):   ash/40     — min readable metadata
- *   Lv6 (ultra-decorative):  ash/30     — absolute minimum visible
- *   Ghost (atmosphere only):  bone/[0.02] — intentionally near-invisible
+ *   Lv5 (decorative meta):   ash/50     — min readable metadata
+ *   Lv6 (ultra-decorative):  ash/40     — absolute minimum visible
+ *   Ghost (atmosphere only):  bone/[0.025] — intentionally near-invisible
  *
  * Accent text:
  *   crimson            #DC2626  — full accent

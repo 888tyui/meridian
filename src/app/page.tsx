@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* Vertical side text */}
         <div className="hidden lg:block absolute left-6 top-1/2 -translate-y-1/2 text-vertical">
-          <span className="font-mono text-[9px] tracking-[0.5em] text-ash/30 uppercase">
+          <span className="font-mono text-[9px] tracking-[0.5em] text-ash/40 uppercase">
             Meridian Lost Collective — Epoch III — Signal Active
           </span>
         </div>
@@ -46,7 +46,7 @@ export default function Home() {
 
         {/* Scroll indicator — bottom center */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-          <span className="font-mono text-[8px] tracking-[0.4em] text-ash/30 uppercase">
+          <span className="font-mono text-[8px] tracking-[0.4em] text-ash/45 uppercase">
             Scroll
           </span>
           <div className="w-px h-12 bg-gradient-to-b from-crimson/50 to-transparent" />
@@ -124,7 +124,7 @@ export default function Home() {
           <ScrollReveal animation="up" delay={0.5}>
             <div className="mt-14 flex items-center justify-center gap-4">
               <div className="w-8 h-px bg-crimson/30" />
-              <span className="font-mono text-[9px] tracking-[0.3em] text-ash/40 uppercase">
+              <span className="font-mono text-[9px] tracking-[0.3em] text-ash/50 uppercase">
                 The First Keeper — Before Epoch 0 — Recovered Fragment
               </span>
               <div className="w-8 h-px bg-crimson/30" />

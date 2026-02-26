@@ -62,10 +62,10 @@ export default function Navigation() {
               className={`group nav-link-glitch relative flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] uppercase transition-all duration-500 ${
                 pathname === link.href
                   ? "text-crimson"
-                  : "text-bone/50 hover:text-bone/80"
+                  : "text-bone/60 hover:text-bone/90"
               }`}
             >
-              <span className="text-crimson/30 font-mono text-[8px] group-hover:text-crimson/50 transition-colors duration-400">
+              <span className="text-crimson/40 font-mono text-[8px] group-hover:text-crimson/50 transition-colors duration-400">
                 {link.code}
               </span>
               {link.label}
@@ -88,7 +88,7 @@ export default function Navigation() {
             href="https://x.com/meridiandotist"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500"
+            className="group flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] text-ash/50 hover:text-bone/80 transition-all duration-500"
           >
             <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
           </a>
@@ -96,7 +96,7 @@ export default function Navigation() {
             href="https://github.com/meridianlost-code"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] text-ash/40 hover:text-bone/70 transition-all duration-500"
+            className="group flex items-center gap-1.5 font-mono text-[9px] tracking-[0.2em] text-ash/50 hover:text-bone/80 transition-all duration-500"
           >
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" /></svg>
           </a>
@@ -133,14 +133,14 @@ export default function Navigation() {
               href={link.href}
               onClick={closeMobile}
               className={`group font-heading text-4xl tracking-[0.2em] transition-all duration-500 ${
-                pathname === link.href ? "text-crimson" : "text-bone/30 hover:text-bone"
+                pathname === link.href ? "text-crimson" : "text-bone/40 hover:text-bone"
               }`}
               style={{
                 animation: `mobile-menu-item-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.06}s forwards`,
                 opacity: 0,
               }}
             >
-              <span className="block font-mono text-[9px] tracking-[0.5em] text-crimson/30 mb-1">{link.code}</span>
+              <span className="block font-mono text-[9px] tracking-[0.5em] text-crimson/40 mb-1">{link.code}</span>
               {link.label}
               {pathname === link.href && (
                 <span className="block w-12 h-[2px] bg-gradient-to-r from-crimson/60 to-transparent mt-2" />
@@ -161,7 +161,7 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMobile}
-              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-ash/40 hover:text-bone transition-colors duration-400 uppercase"
+              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-ash/50 hover:text-bone transition-colors duration-400 uppercase"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
               X
@@ -171,7 +171,7 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMobile}
-              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-ash/40 hover:text-bone transition-colors duration-400 uppercase"
+              className="flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-ash/50 hover:text-bone transition-colors duration-400 uppercase"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" /></svg>
               Community

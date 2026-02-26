@@ -63,12 +63,12 @@ export default function TransmissionsPage() {
             <div className="mt-14 flex flex-wrap items-center justify-center gap-8 py-5 border-t border-b border-bone/[0.06]">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
-                <span className="font-mono text-[10px] tracking-[0.2em] text-ash/40">9 BROADCASTS</span>
+                <span className="font-mono text-[10px] tracking-[0.2em] text-ash/50">9 BROADCASTS</span>
               </div>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-ash/30">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-ash/45">
                 FREQ RANGE: 133.000 — 145.500 MHz
               </span>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-ash/30">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-ash/45">
                 CLASSIFICATION: MIXED
               </span>
             </div>

@@ -105,9 +105,9 @@ export default function InscribePage() {
                                             <div className="hidden md:block w-12 h-px bg-gradient-to-r from-bone/[0.04] via-crimson/15 to-bone/[0.04] mx-4" />
                                         )}
                                         <div className="flex items-center gap-3 px-4 py-2.5 border border-bone/[0.04]">
-                                            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40">{step.num}</span>
-                                            <div className="w-px h-3 bg-bone/[0.06]" />
-                                            <span className="font-mono text-[10px] tracking-[0.15em] text-ash/40">{step.text}</span>
+                                            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50">{step.num}</span>
+                                            <div className="w-px h-3 bg-bone/[0.08]" />
+                                            <span className="font-mono text-[10px] tracking-[0.15em] text-ash/50">{step.text}</span>
                                         </div>
                                     </div>
                                 ))}

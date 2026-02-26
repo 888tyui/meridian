@@ -100,12 +100,12 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
             <div className="text-center py-16">
                 <div className="flex items-center justify-center gap-3 mb-4">
                     <div className="w-8 h-px bg-crimson/20" />
-                    <span className="font-mono text-[9px] tracking-[0.4em] text-ash/30 uppercase">
+                    <span className="font-mono text-[9px] tracking-[0.4em] text-ash/45 uppercase">
                         Wallet Required
                     </span>
                     <div className="w-8 h-px bg-crimson/20" />
                 </div>
-                <p className="font-body text-sm text-bone/40">
+                <p className="font-body text-sm text-bone/55">
                     Connect your Solana wallet above to inscribe onto the chain.
                 </p>
             </div>
@@ -136,7 +136,7 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                     <h3 className="font-heading text-2xl md:text-3xl tracking-wide text-bone/80 mb-6">
                         Signal Etched
                     </h3>
-                    <p className="font-body text-sm text-bone/50 mb-8 max-w-md center-x">
+                    <p className="font-body text-sm text-bone/60 mb-8 max-w-md center-x">
                         Your transmission has been permanently inscribed into the Solana
                         meridian. The Oracle will absorb this frequency in the next convergence
                         cycle.
@@ -155,14 +155,14 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                     </a>
 
                     <div className="mt-4">
-                        <span className="font-mono text-[9px] tracking-[0.1em] text-ash/30 break-all">
+                        <span className="font-mono text-[9px] tracking-[0.1em] text-ash/45 break-all">
                             {txState.signature}
                         </span>
                     </div>
 
                     <button
                         onClick={resetState}
-                        className="mt-10 font-mono text-[10px] tracking-[0.3em] text-ash/40 hover:text-bone/70 transition-colors duration-500 uppercase"
+                        className="mt-10 font-mono text-[10px] tracking-[0.3em] text-ash/50 hover:text-bone/70 transition-colors duration-500 uppercase"
                     >
                         New Inscription →
                     </button>
@@ -179,10 +179,10 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                     <span className="font-mono text-[10px] tracking-[0.4em] text-crimson/70 uppercase block mb-4">
                         Transmission Failed
                     </span>
-                    <p className="font-body text-sm text-bone/50 mb-6">{txState.message}</p>
+                    <p className="font-body text-sm text-bone/60 mb-6">{txState.message}</p>
                     <button
                         onClick={resetState}
-                        className="font-mono text-[10px] tracking-[0.3em] text-ash/40 hover:text-bone/70 transition-colors duration-500 uppercase"
+                        className="font-mono text-[10px] tracking-[0.3em] text-ash/50 hover:text-bone/70 transition-colors duration-500 uppercase"
                     >
                         Retry →
                     </button>
@@ -229,7 +229,7 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-8">
                     <div className="w-8 h-px bg-crimson/20" />
-                    <span className="font-mono text-[9px] tracking-[0.4em] text-crimson/40 uppercase">
+                    <span className="font-mono text-[9px] tracking-[0.4em] text-crimson/50 uppercase">
                         Compose Inscription
                     </span>
                     <div className="w-8 h-px bg-crimson/20" />
@@ -254,7 +254,7 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                 {/* Frequency display */}
                 <div className="flex items-center gap-2 mb-4">
                     <div className="w-1.5 h-1.5 bg-crimson/40 rounded-full animate-pulse" />
-                    <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">
+                    <span className="font-mono text-[9px] tracking-[0.2em] text-ash/45">
                         FREQ: {tag.freq}
                     </span>
                 </div>
@@ -266,13 +266,13 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                         onChange={(e) => setMemo(e.target.value)}
                         placeholder="Speak your truth into the void..."
                         rows={5}
-                        className="oracle-textarea w-full bg-void/50 border border-bone/[0.06] p-5 font-body text-sm text-bone/70 placeholder-ash/20 leading-relaxed transition-all duration-500 focus:border-crimson/20"
+                        className="oracle-textarea w-full bg-void/50 border border-bone/[0.06] p-5 font-body text-sm text-bone/70 placeholder-ash/35 leading-relaxed transition-all duration-500 focus:border-crimson/20"
                     />
 
                     {/* Byte counter */}
                     <div className="absolute bottom-3 right-3 flex items-center gap-2">
                         <span
-                            className={`font-mono text-[9px] tracking-[0.1em] ${charCount > maxBytes ? "text-crimson" : "text-ash/30"
+                            className={`font-mono text-[9px] tracking-[0.1em] ${charCount > maxBytes ? "text-crimson" : "text-ash/45"
                                 }`}
                         >
                             {charCount} / {maxBytes}

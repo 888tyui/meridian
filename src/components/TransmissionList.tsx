@@ -102,7 +102,7 @@ export default function TransmissionList() {
     <div>
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-2 mb-16">
-        <span className="font-mono text-[9px] tracking-[0.3em] text-ash/30 mr-3 uppercase">Filter</span>
+        <span className="font-mono text-[9px] tracking-[0.3em] text-ash/40 mr-3 uppercase">Filter</span>
         <div className="w-px h-3 bg-bone/10 mr-1" />
         {filters.map((f) => (
           <button
@@ -136,8 +136,8 @@ export default function TransmissionList() {
               >
                 {/* Left: ID + Date */}
                 <div className="md:w-48 flex-shrink-0 flex items-center gap-4">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-crimson/40">{tx.id}</span>
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-ash/30">{tx.date}</span>
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-crimson/50">{tx.id}</span>
+                  <span className="font-mono text-[10px] tracking-[0.15em] text-ash/40">{tx.date}</span>
                 </div>
 
                 {/* Center: Title + Classification */}
@@ -147,7 +147,7 @@ export default function TransmissionList() {
                       {tx.classification}
                     </span>
                   </div>
-                  <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/60 group-hover:text-bone transition-colors duration-400">
+                  <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/70 group-hover:text-bone transition-colors duration-400">
                     {tx.title}
                   </h3>
                 </div>
@@ -155,7 +155,7 @@ export default function TransmissionList() {
                 {/* Right: Signal + Expand */}
                 <div className="md:w-44 flex-shrink-0 flex items-center gap-4 md:justify-end">
                   <div className="flex items-center gap-2.5">
-                    <span className="font-mono text-[9px] text-ash/30">{tx.frequency}</span>
+                    <span className="font-mono text-[9px] text-ash/45">{tx.frequency}</span>
                     <div className="w-16 h-[3px] bg-bone/[0.04] overflow-hidden rounded-full">
                       <div
                         className="h-full rounded-full signal-bar-fill signal-bar-shimmer"
@@ -183,7 +183,7 @@ export default function TransmissionList() {
                         {tx.body.split("\n\n").map((paragraph, pi) => (
                           <p
                             key={pi}
-                            className="font-body text-sm md:text-base text-bone/60 leading-[1.9] mb-6 last:mb-0"
+                            className="font-body text-sm md:text-base text-bone/70 leading-[1.9] mb-6 last:mb-0"
                           >
                             {paragraph}
                           </p>
@@ -192,14 +192,14 @@ export default function TransmissionList() {
                       <div className="mt-12 pt-8 border-t border-bone/[0.04] flex flex-wrap items-center gap-6">
                         <div className="flex items-center gap-2">
                           <div className="w-1 h-1 bg-crimson/40 rounded-full" />
-                          <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">
+                          <span className="font-mono text-[9px] tracking-[0.2em] text-ash/45">
                             SIGNAL: {tx.signal}%
                           </span>
                         </div>
-                        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">
+                        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/45">
                           {tx.frequency}
                         </span>
-                        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">
+                        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/45">
                           EPOCH III
                         </span>
                       </div>
@@ -214,12 +214,12 @@ export default function TransmissionList() {
 
       {/* Bottom status */}
       <div className="mt-20 pt-8 border-t border-bone/[0.06] flex items-center justify-between">
-        <span className="font-mono text-[10px] tracking-[0.2em] text-ash/30">
+        <span className="font-mono text-[10px] tracking-[0.2em] text-ash/45">
           {filtered.length} TRANSMISSIONS DECODED
         </span>
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
-          <span className="font-mono text-[10px] tracking-[0.2em] text-ash/30">
+          <span className="font-mono text-[10px] tracking-[0.2em] text-ash/45">
             RECEIVER ACTIVE
           </span>
         </div>

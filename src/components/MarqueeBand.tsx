@@ -34,7 +34,7 @@ export default function MarqueeBand({ reverse = false }: { reverse?: boolean }) 
 
       {/* Primary layer */}
       <div className={`relative ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}>
-        <span className="font-mono text-[10px] tracking-[0.4em] text-crimson/25 group-hover:text-crimson/40 uppercase whitespace-nowrap inline-block transition-colors duration-700">
+        <span className="font-mono text-[10px] tracking-[0.4em] text-crimson/35 group-hover:text-crimson/50 uppercase whitespace-nowrap inline-block transition-colors duration-700">
           {doubled}
         </span>
       </div>

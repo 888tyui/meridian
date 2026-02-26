@@ -12,7 +12,7 @@ export default function Footer() {
               </div>
               <span className="font-heading text-xl tracking-widest text-bone/80">MERIDIAN LOST</span>
             </div>
-            <p className="font-body text-sm text-bone/50 leading-[1.8] max-w-sm">
+            <p className="font-body text-sm text-bone/60 leading-[1.8] max-w-sm">
               The signal persists in the silence between stations. We are the pattern that emerges when the noise subsides. Find us at the convergence point.
             </p>
 
@@ -42,29 +42,29 @@ export default function Footer() {
 
           {/* Links — 3 cols */}
           <div className="md:col-span-3">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40 block mb-6 uppercase">Navigate</span>
+            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50 block mb-6 uppercase">Navigate</span>
             <div className="flex flex-col gap-4">
-              <a href="/" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Origin</a>
-              <a href="/transmissions" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Transmissions</a>
-              <a href="/oracle" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Oracle</a>
-              <a href="/doctrine" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Doctrine</a>
-              <a href="/inscribe" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/40 uppercase w-fit">Inscribe</a>
+              <a href="/" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/50 uppercase w-fit">Origin</a>
+              <a href="/transmissions" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/50 uppercase w-fit">Transmissions</a>
+              <a href="/oracle" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/50 uppercase w-fit">Oracle</a>
+              <a href="/doctrine" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/50 uppercase w-fit">Doctrine</a>
+              <a href="/inscribe" className="footer-link inline-block font-mono text-[11px] tracking-[0.15em] text-bone/50 uppercase w-fit">Inscribe</a>
             </div>
           </div>
 
           {/* Status — 3 cols */}
           <div className="md:col-span-3">
-            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40 block mb-6 uppercase">Status</span>
+            <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50 block mb-6 uppercase">Status</span>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
-                <span className="font-mono text-[11px] tracking-[0.15em] text-ash/40">Signal Active</span>
+                <span className="font-mono text-[11px] tracking-[0.15em] text-ash/50">Signal Active</span>
               </div>
-              <span className="font-mono text-[11px] tracking-[0.15em] text-ash/30">Epoch III — Convergence</span>
-              <span className="font-mono text-[11px] tracking-[0.15em] text-ash/30">Nodes Online: 2,847</span>
+              <span className="font-mono text-[11px] tracking-[0.15em] text-ash/40">Epoch III — Convergence</span>
+              <span className="font-mono text-[11px] tracking-[0.15em] text-ash/40">Nodes Online: 2,847</span>
               <div className="mt-2 flex items-center gap-2">
                 <div className="w-1 h-1 bg-crimson/30 rounded-full" />
-                <span className="font-mono text-[9px] tracking-[0.2em] text-ash/25">
+                <span className="font-mono text-[9px] tracking-[0.2em] text-ash/35">
                   51.4014° N, 0.3231° W
                 </span>
               </div>
@@ -75,11 +75,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-20 pt-8 border-t border-bone/[0.04]">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">
+            <span className="font-mono text-[9px] tracking-[0.2em] text-ash/40">
               &copy; EPOCH III — MERIDIAN LOST COLLECTIVE
             </span>
             <div className="flex items-center gap-6">
-              <span className="font-mono text-[9px] tracking-[0.15em] text-ash/20">
+              <span className="font-mono text-[9px] tracking-[0.15em] text-ash/35">
                 THE SIGNAL PERSISTS
               </span>
               <div className="w-12 h-px bg-gradient-to-r from-crimson/30 to-transparent" />

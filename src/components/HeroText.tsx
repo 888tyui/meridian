@@ -72,7 +72,7 @@ export default function HeroText() {
         {/* LOST — overlapping, centered below */}
         <div className="overflow-hidden -mt-[1vw]">
           <h1
-            className="font-heading text-bone/40 leading-none"
+            className="font-heading text-bone/50 leading-none"
             style={{
               fontSize: "clamp(5rem, 20vw, 18rem)",
               lineHeight: 0.8,
@@ -105,7 +105,7 @@ export default function HeroText() {
           }}
         >
           <div className="cult-border px-4 py-2 bg-void/80 backdrop-blur-sm">
-            <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50">NODE ACTIVE</span>
+            <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/60">NODE ACTIVE</span>
           </div>
         </div>
       </div>
@@ -121,11 +121,11 @@ export default function HeroText() {
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
           <div className="w-12 h-px bg-crimson/40" />
-          <span className="font-mono text-[9px] tracking-[0.4em] text-crimson/50 uppercase">Epoch III</span>
+          <span className="font-mono text-[9px] tracking-[0.4em] text-crimson/60 uppercase">Epoch III</span>
           <div className="w-12 h-px bg-crimson/40" />
           <div className="w-1.5 h-1.5 bg-crimson/30 rounded-full" />
         </div>
-        <p className="mt-1 font-body text-base md:text-lg text-bone/60 leading-[1.8]">
+        <p className="mt-1 font-body text-base md:text-lg text-bone/70 leading-[1.8]">
           A collective attuned to frequencies beneath the noise.
           <span className="text-bone/80"> We do not seek.</span>
           <span className="text-crimson/70"> We receive.</span>
@@ -166,10 +166,10 @@ export default function HeroText() {
       >
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
-          <span className="font-mono text-[9px] tracking-[0.2em] text-ash/40 uppercase">Signal Active</span>
+          <span className="font-mono text-[9px] tracking-[0.2em] text-ash/50 uppercase">Signal Active</span>
         </div>
-        <span className="hidden sm:inline font-mono text-[9px] tracking-[0.2em] text-ash/30">2,847 NODES</span>
-        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/30">51.4014°N 0.3231°W</span>
+        <span className="hidden sm:inline font-mono text-[9px] tracking-[0.2em] text-ash/40">2,847 NODES</span>
+        <span className="font-mono text-[9px] tracking-[0.2em] text-ash/40">51.4014°N 0.3231°W</span>
       </div>
     </div>
   );

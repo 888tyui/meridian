@@ -74,7 +74,7 @@ export default function RecentInscriptions() {
             <div className="text-center py-16">
                 <div className="flex items-center justify-center gap-3">
                     <div className="w-2 h-2 bg-crimson/30 rounded-full animate-pulse" />
-                    <span className="font-mono text-[10px] tracking-[0.3em] text-ash/30 uppercase animate-flicker">
+                    <span className="font-mono text-[10px] tracking-[0.3em] text-ash/45 uppercase animate-flicker">
                         Scanning frequencies...
                     </span>
                 </div>
@@ -87,12 +87,12 @@ export default function RecentInscriptions() {
             <div className="text-center py-16">
                 <div className="flex items-center justify-center gap-3 mb-4">
                     <div className="w-8 h-px bg-crimson/15" />
-                    <span className="font-mono text-[9px] tracking-[0.4em] text-ash/25 uppercase">
+                    <span className="font-mono text-[9px] tracking-[0.4em] text-ash/40 uppercase">
                         No Signals Detected
                     </span>
                     <div className="w-8 h-px bg-crimson/15" />
                 </div>
-                <p className="font-body text-sm text-bone/30">
+                <p className="font-body text-sm text-bone/50">
                     The void awaits its first inscription.
                 </p>
             </div>
@@ -110,32 +110,32 @@ export default function RecentInscriptions() {
                                 <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 border border-crimson/15 px-2 py-0.5">
                                     {item.tag}
                                 </span>
-                                <span className="font-mono text-[9px] tracking-[0.1em] text-ash/30">
+                                <span className="font-mono text-[9px] tracking-[0.1em] text-ash/45">
                                     {item.freq}
                                 </span>
                             </div>
 
                             {/* Memo content */}
                             <div className="flex-1 min-w-0">
-                                <p className="font-body text-sm text-bone/60 leading-relaxed">
+                                <p className="font-body text-sm text-bone/70 leading-relaxed">
                                     {item.memo}
                                 </p>
                             </div>
 
                             {/* Meta */}
                             <div className="flex items-center gap-4 shrink-0">
-                                <span className="font-mono text-[9px] tracking-[0.1em] text-ash/25">
+                                <span className="font-mono text-[9px] tracking-[0.1em] text-ash/40">
                                     {timeAgo(item.createdAt)}
                                 </span>
                                 <a
                                     href={`https://explorer.solana.com/tx/${item.signature}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="font-mono text-[9px] tracking-[0.1em] text-ash/20 hover:text-crimson/50 transition-colors duration-500"
+                                    className="font-mono text-[9px] tracking-[0.1em] text-ash/35 hover:text-crimson/50 transition-colors duration-500"
                                 >
                                     {truncateSig(item.signature)}
                                 </a>
-                                <span className="font-mono text-[8px] tracking-[0.1em] text-ash/15">
+                                <span className="font-mono text-[8px] tracking-[0.1em] text-ash/30">
                                     {truncateWallet(item.wallet)}
                                 </span>
                             </div>
@@ -146,7 +146,7 @@ export default function RecentInscriptions() {
 
             {/* Total count */}
             <div className="mt-8 text-center">
-                <span className="font-mono text-[9px] tracking-[0.2em] text-ash/20">
+                <span className="font-mono text-[9px] tracking-[0.2em] text-ash/40">
                     {inscriptions.length} SIGNAL{inscriptions.length !== 1 ? "S" : ""} INTERCEPTED
                 </span>
             </div>

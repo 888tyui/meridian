@@ -36,7 +36,7 @@ export default function DoctrinePreview() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6">
         {/* Card 1 — Large, spans 7 cols */}
         <ScrollReveal animation="up" delay={0} className="md:col-span-7">
-          <a href="/transmissions" className="group editorial-card block relative bg-surface/40 border border-bone/[0.03] hover:border-crimson/20 p-10 md:p-14 h-full overflow-hidden backdrop-blur-[2px]">
+          <a href="/transmissions" className="group editorial-card block relative bg-surface/40 border border-bone/[0.05] hover:border-crimson/20 p-10 md:p-14 h-full overflow-hidden backdrop-blur-[2px]">
             {/* Huge ghost number */}
             <span className="absolute -top-4 -right-2 font-heading text-[10rem] md:text-[14rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
               01
@@ -47,7 +47,7 @@ export default function DoctrinePreview() {
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-8">
-                <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40">{TRANSMISSIONS[0].id}</span>
+                <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50">{TRANSMISSIONS[0].id}</span>
                 <div className="w-8 h-px bg-crimson/15" />
                 <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 border border-crimson/15 px-2 py-0.5 uppercase">
                   {TRANSMISSIONS[0].classification}
@@ -58,12 +58,12 @@ export default function DoctrinePreview() {
                 {TRANSMISSIONS[0].title}
               </h3>
 
-              <p className="font-body text-sm md:text-base text-bone/50 leading-relaxed max-w-lg mb-10">
+              <p className="font-body text-sm md:text-base text-bone/60 leading-relaxed max-w-lg mb-10">
                 {TRANSMISSIONS[0].excerpt}
               </p>
 
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[9px] tracking-[0.15em] text-ash/40">{TRANSMISSIONS[0].frequency}</span>
+                <span className="font-mono text-[9px] tracking-[0.15em] text-ash/50">{TRANSMISSIONS[0].frequency}</span>
                 <span className="font-mono text-[10px] text-crimson/0 group-hover:text-crimson/60 transition-all duration-500 tracking-[0.5em]">
                   READ &#8594;
                 </span>
@@ -79,7 +79,7 @@ export default function DoctrinePreview() {
         <div className="md:col-span-5 flex flex-col gap-6">
           {/* Card 2 — offset up for stagger */}
           <ScrollReveal animation="right" delay={0.2} className="md:-mt-12">
-            <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.03] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
+            <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.05] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
               <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
                 02
               </span>
@@ -89,22 +89,22 @@ export default function DoctrinePreview() {
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40">{TRANSMISSIONS[1].id}</span>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50">{TRANSMISSIONS[1].id}</span>
                   <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 border border-crimson/15 px-2 py-0.5 uppercase">
                     {TRANSMISSIONS[1].classification}
                   </span>
                 </div>
 
-                <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/70 mb-5 group-hover:text-bone transition-colors duration-500">
+                <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/80 mb-5 group-hover:text-bone transition-colors duration-500">
                   {TRANSMISSIONS[1].title}
                 </h3>
 
-                <p className="font-body text-sm text-bone/50 leading-relaxed mb-8">
+                <p className="font-body text-sm text-bone/60 leading-relaxed mb-8">
                   {TRANSMISSIONS[1].excerpt}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[9px] text-ash/40">{TRANSMISSIONS[1].frequency}</span>
+                  <span className="font-mono text-[9px] text-ash/50">{TRANSMISSIONS[1].frequency}</span>
                   <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 tracking-[0.4em] transition-all duration-500">READ &#8594;</span>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function DoctrinePreview() {
 
           {/* Card 3 */}
           <ScrollReveal animation="right" delay={0.4}>
-            <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.03] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
+            <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.05] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
               <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
                 03
               </span>
@@ -125,22 +125,22 @@ export default function DoctrinePreview() {
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/40">{TRANSMISSIONS[2].id}</span>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-crimson/50">{TRANSMISSIONS[2].id}</span>
                   <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/50 border border-crimson/15 px-2 py-0.5 uppercase">
                     {TRANSMISSIONS[2].classification}
                   </span>
                 </div>
 
-                <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/70 mb-5 group-hover:text-bone transition-colors duration-500">
+                <h3 className="font-heading text-xl md:text-2xl tracking-wide text-bone/80 mb-5 group-hover:text-bone transition-colors duration-500">
                   {TRANSMISSIONS[2].title}
                 </h3>
 
-                <p className="font-body text-sm text-bone/50 leading-relaxed mb-8">
+                <p className="font-body text-sm text-bone/60 leading-relaxed mb-8">
                   {TRANSMISSIONS[2].excerpt}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[9px] text-ash/40">{TRANSMISSIONS[2].frequency}</span>
+                  <span className="font-mono text-[9px] text-ash/50">{TRANSMISSIONS[2].frequency}</span>
                   <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 tracking-[0.4em] transition-all duration-500">READ &#8594;</span>
                 </div>
               </div>

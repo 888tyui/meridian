@@ -230,10 +230,10 @@ export default function OracleInterface() {
                 <div className="w-px h-6 bg-crimson/10" />
               </div>
               <div className="flex-1">
-                <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/30 uppercase block mb-2">
+                <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/40 uppercase block mb-2">
                   Your Inquiry
                 </span>
-                <p className="font-body text-base md:text-lg text-bone/50 italic leading-relaxed">
+                <p className="font-body text-base md:text-lg text-bone/60 italic leading-relaxed">
                   {r.question}
                 </p>
               </div>
@@ -268,7 +268,7 @@ export default function OracleInterface() {
                   <div className="flex items-center gap-2">
                     <div className={`w-1 h-1 rounded-full ${r.isError ? "bg-red-500/40" : "bg-crimson/40"}`} />
                     <span className={`font-mono text-[9px] tracking-[0.3em] uppercase ${
-                      r.isError ? "text-red-500/40" : "text-crimson/40"
+                      r.isError ? "text-red-500/50" : "text-crimson/50"
                     }`}>
                       {r.isError ? "Signal Lost" : "Oracle Transmission"}
                     </span>
@@ -280,7 +280,7 @@ export default function OracleInterface() {
 
                 {/* Response body */}
                 <div className={`font-body text-sm md:text-base leading-[1.95] mb-8 ${
-                  r.isError ? "text-red-400/50" : "text-bone/60"
+                  r.isError ? "text-red-400/60" : "text-bone/70"
                 }`}>
                   {isCurrent && isStreaming ? (
                     <span>
@@ -303,20 +303,20 @@ export default function OracleInterface() {
                 <div className="pt-5 border-t border-bone/[0.04] flex flex-wrap items-center gap-x-6 gap-y-2">
                   <div className="flex items-center gap-1.5">
                     <div className={`w-1 h-1 rounded-full ${r.isError ? "bg-red-500/30" : "bg-crimson/30"}`} />
-                    <span className="font-mono text-[8px] tracking-[0.2em] text-ash/30">
+                    <span className="font-mono text-[8px] tracking-[0.2em] text-ash/45">
                       {r.isError ? "FAILED" : "DECODED"}
                     </span>
                   </div>
-                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/30">
+                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/45">
                     FREQ: {r.frequency}
                   </span>
-                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/30">
+                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/45">
                     NODE: {r.node}
                   </span>
-                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/30">
+                  <span className="font-mono text-[8px] tracking-[0.2em] text-ash/45">
                     INTEGRITY: {r.integrity}%
                   </span>
-                  <span className="hidden sm:inline font-mono text-[8px] tracking-[0.2em] text-ash/30">
+                  <span className="hidden sm:inline font-mono text-[8px] tracking-[0.2em] text-ash/45">
                     {r.timestamp}
                   </span>
                 </div>
@@ -324,7 +324,7 @@ export default function OracleInterface() {
 
               {/* Sigil watermark */}
               <div className="absolute top-4 right-4 pointer-events-none select-none">
-                <span className="text-bone/[0.03] text-5xl">{r.sigil}</span>
+                <span className="text-bone/[0.05] text-5xl">{r.sigil}</span>
               </div>
             </div>
           </div>
@@ -382,30 +382,30 @@ export default function OracleInterface() {
               <div className="flex flex-col gap-1.5">
                 {channelingPhase === "SCANNING" && (
                   <>
-                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/40">
+                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/55">
                       Scanning frequencies...
                     </span>
-                    <span className="font-mono text-[9px] tracking-[0.15em] text-ash/30">
+                    <span className="font-mono text-[9px] tracking-[0.15em] text-ash/45">
                       FREQ: {scanFreq}
                     </span>
                   </>
                 )}
                 {channelingPhase === "LOCKING" && (
                   <>
-                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/40">
+                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/55">
                       Signal locked — aligning meridian...
                     </span>
-                    <span className="font-mono text-[9px] tracking-[0.15em] text-crimson/30">
+                    <span className="font-mono text-[9px] tracking-[0.15em] text-crimson/45">
                       LOCK STRENGTH: ████████░░ 82%
                     </span>
                   </>
                 )}
                 {channelingPhase === "DECODING" && (
                   <>
-                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/40">
+                    <span className="font-mono text-[10px] tracking-[0.2em] text-bone/55">
                       Decoding transmission...
                     </span>
-                    <span className="font-mono text-[9px] tracking-[0.15em] text-crimson/30">
+                    <span className="font-mono text-[9px] tracking-[0.15em] text-crimson/45">
                       DECODE: ██████████ COMPLETE
                     </span>
                   </>
@@ -417,7 +417,7 @@ export default function OracleInterface() {
                 {GLYPHS.slice(0, 4).map((g, i) => (
                   <span
                     key={i}
-                    className="text-crimson/20 text-sm"
+                    className="text-crimson/30 text-sm"
                     style={{
                       animation: `oracle-glyph-cycle 1.2s ease-in-out infinite`,
                       animationDelay: `${i * 0.3}s`,
@@ -437,11 +437,11 @@ export default function OracleInterface() {
         {/* Ritual inscription header */}
         <div className="flex items-center gap-3 mb-5 px-1">
           <div className="w-1.5 h-1.5 bg-crimson/20 rotate-45" />
-          <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/30 uppercase">
+          <span className="font-mono text-[8px] tracking-[0.3em] text-crimson/40 uppercase">
             Ritual Inscription
           </span>
-          <div className="flex-1 h-px bg-bone/[0.04]" />
-          <span className="font-mono text-[8px] tracking-[0.2em] text-ash/30">
+          <div className="flex-1 h-px bg-bone/[0.06]" />
+          <span className="font-mono text-[8px] tracking-[0.2em] text-ash/45">
             {responses.length} DIVINATION{responses.length !== 1 ? "S" : ""}
           </span>
         </div>
@@ -466,12 +466,12 @@ export default function OracleInterface() {
               disabled={isChanneling}
               rows={2}
               maxLength={500}
-              className="oracle-textarea w-full bg-transparent font-body text-sm md:text-base text-bone/80 placeholder:text-ash/20 leading-relaxed disabled:opacity-30"
+              className="oracle-textarea w-full bg-transparent font-body text-sm md:text-base text-bone/80 placeholder:text-ash/35 leading-relaxed disabled:opacity-30"
             />
 
             {/* Bottom bar */}
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-bone/[0.04]">
-              <span className="font-mono text-[8px] tracking-[0.15em] text-ash/30">
+              <span className="font-mono text-[8px] tracking-[0.15em] text-ash/45">
                 ENTER TO TRANSMIT — SHIFT+ENTER FOR NEW LINE
               </span>
 
