@@ -242,7 +242,7 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                             key={t.label}
                             onClick={() => setTag(t)}
                             className={`filter-btn px-3 py-1.5 border font-mono text-[9px] tracking-[0.2em] uppercase transition-all duration-400 ${tag.label === t.label
-                                    ? "border-crimson/30 text-crimson/70 bg-crimson/[0.05]"
+                                    ? "border-crimson/30 text-crimson/70 bg-crimson/[0.05] shadow-[0_0_12px_rgba(220,38,38,0.08)]"
                                     : "border-bone/[0.06] text-ash/40 hover:text-bone/60 hover:border-bone/10"
                                 }`}
                         >
@@ -284,13 +284,22 @@ export default function InscriptionForm({ onInscriptionCreated }: InscriptionFor
                 <button
                     onClick={handleSubmit}
                     disabled={!memo.trim() || charCount > maxBytes || isProcessing}
-                    className="group w-full btn-shimmer py-4 border border-crimson/20 bg-crimson/[0.04] hover:bg-crimson/[0.08] transition-all duration-700 disabled:opacity-30 disabled:hover:bg-crimson/[0.04]"
+                    className={`group w-full btn-shimmer py-4 border transition-all duration-700 disabled:opacity-30 ${
+                        memo.trim() && charCount <= maxBytes && !isProcessing
+                            ? "border-crimson/25 bg-crimson/[0.05] hover:bg-crimson/[0.10] hover:border-crimson/35 hover:shadow-[0_0_30px_rgba(220,38,38,0.06)]"
+                            : "border-crimson/15 bg-crimson/[0.03]"
+                    }`}
                 >
                     <div className="flex items-center justify-center gap-4">
                         <span className="w-6 h-px bg-crimson/30 group-hover:w-10 transition-all duration-500" />
-                        <span className="font-mono text-[11px] tracking-[0.3em] text-bone/70 group-hover:text-bone transition-colors duration-500 uppercase">
-                            Inscribe onto Chain
-                        </span>
+                        <div className="flex items-center gap-3">
+                            {memo.trim() && charCount <= maxBytes && !isProcessing && (
+                                <div className="w-1.5 h-1.5 bg-crimson/50 rounded-full animate-pulse" />
+                            )}
+                            <span className="font-mono text-[11px] tracking-[0.3em] text-bone/70 group-hover:text-bone transition-colors duration-500 uppercase">
+                                Inscribe onto Chain
+                            </span>
+                        </div>
                         <span className="w-6 h-px bg-crimson/30 group-hover:w-10 transition-all duration-500" />
                     </div>
                 </button>

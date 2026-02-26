@@ -82,7 +82,7 @@ export default function DoctrinePage() {
                 {/* Ghost text */}
                 <div className="absolute top-12 left-1/2 -translate-x-1/2 pointer-events-none select-none">
                     <span
-                        className="font-heading text-bone/[0.02] whitespace-nowrap"
+                        className="font-heading text-bone/[0.025] whitespace-nowrap"
                         style={{ fontSize: "clamp(6rem, 18vw, 16rem)" }}
                     >
                         PROTOCOL
@@ -130,7 +130,7 @@ export default function DoctrinePage() {
                 {/* Ghost text */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
                     <span
-                        className="font-heading text-bone/[0.02] whitespace-nowrap"
+                        className="font-heading text-bone/[0.025] whitespace-nowrap"
                         style={{ fontSize: "clamp(6rem, 20vw, 18rem)" }}
                     >
                         GENESIS
@@ -388,7 +388,7 @@ export default function DoctrinePage() {
                 {/* Ghost text */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
                     <span
-                        className="font-heading text-bone/[0.02] whitespace-nowrap"
+                        className="font-heading text-bone/[0.025] whitespace-nowrap"
                         style={{ fontSize: "clamp(6rem, 22vw, 20rem)" }}
                     >
                         INSCRIBE

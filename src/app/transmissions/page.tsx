@@ -19,11 +19,12 @@ export default function TransmissionsPage() {
       {/* Header */}
       <section className="relative pt-36 pb-24 overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,0,0,0.04)_0%,transparent_60%)] pointer-events-none" />
 
         {/* Ghost text */}
         <div className="absolute top-16 left-1/2 -translate-x-1/2 pointer-events-none select-none">
           <span
-            className="font-heading text-bone/[0.02] whitespace-nowrap"
+            className="font-heading text-bone/[0.025] whitespace-nowrap"
             style={{ fontSize: "clamp(6rem, 18vw, 16rem)" }}
           >
             ARCHIVE

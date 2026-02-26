@@ -22,7 +22,7 @@ export default function OraclePage() {
         {/* Ghost text */}
         <div className="absolute top-8 left-1/2 -translate-x-1/2 pointer-events-none select-none">
           <span
-            className="font-heading text-bone/[0.02] whitespace-nowrap"
+            className="font-heading text-bone/[0.025] whitespace-nowrap"
             style={{ fontSize: "clamp(6rem, 18vw, 16rem)" }}
           >
             DIVINATION

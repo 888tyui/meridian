@@ -6,7 +6,6 @@ export default function EntranceRitual() {
   const [phase, setPhase] = useState<"ritual" | "split" | "done">("ritual");
 
   useEffect(() => {
-    // Phase 1: Show ritual text with flicker
     const splitTimer = setTimeout(() => setPhase("split"), 2200);
     const doneTimer = setTimeout(() => setPhase("done"), 3000);
     return () => {
@@ -47,12 +46,31 @@ export default function EntranceRitual() {
           transition: "opacity 0.3s",
         }}
       >
+        {/* Radial glow behind text */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(220, 38, 38, 0.06) 0%, transparent 70%)",
+            opacity: 0,
+            animation: "reveal-blur 1.5s ease-out 0.3s forwards",
+          }}
+        />
+
         {/* Expanding line */}
         <div
-          className="w-24 h-px bg-crimson mb-8"
+          className="w-24 h-px bg-crimson mb-6"
           style={{
             animation: "ritual-line-expand 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
             transformOrigin: "center",
+          }}
+        />
+
+        {/* Sigil diamond */}
+        <div
+          className="w-3 h-3 border border-crimson/40 rotate-45 mb-6"
+          style={{
+            opacity: 0,
+            animation: "reveal-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards",
           }}
         />
 
@@ -74,7 +92,7 @@ export default function EntranceRitual() {
 
         {/* Shrinking line */}
         <div
-          className="w-24 h-px bg-crimson mt-8"
+          className="w-24 h-px bg-crimson mt-6"
           style={{
             animation: "ritual-line-expand 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards",
             transformOrigin: "center",

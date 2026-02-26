@@ -97,7 +97,7 @@ export default function Home() {
         {/* Ghost text in background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none">
           <span
-            className="font-heading text-bone/[0.02] whitespace-nowrap"
+            className="font-heading text-bone/[0.025] whitespace-nowrap"
             style={{ fontSize: "clamp(8rem, 25vw, 24rem)" }}
           >
             CONVERGE

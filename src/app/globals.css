@@ -799,6 +799,96 @@ body {
   backdrop-filter: blur(8px) !important;
 }
 
+/* ===== MOBILE MENU OVERLAY ===== */
+@keyframes mobile-menu-in {
+  from { opacity: 0; backdrop-filter: blur(0); }
+  to { opacity: 1; backdrop-filter: blur(20px); }
+}
+@keyframes mobile-menu-item-in {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.mobile-menu-overlay {
+  animation: mobile-menu-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== MARQUEE EDGE FADE ===== */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* ===== PARAGRAPH STAGGER REVEAL ===== */
+@keyframes paragraph-in {
+  from { opacity: 0; transform: translateY(12px); filter: blur(2px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.paragraph-stagger > p {
+  opacity: 0;
+  animation: paragraph-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.paragraph-stagger > p:nth-child(1) { animation-delay: 0.05s; }
+.paragraph-stagger > p:nth-child(2) { animation-delay: 0.12s; }
+.paragraph-stagger > p:nth-child(3) { animation-delay: 0.19s; }
+.paragraph-stagger > p:nth-child(4) { animation-delay: 0.26s; }
+.paragraph-stagger > p:nth-child(5) { animation-delay: 0.33s; }
+
+/* ===== EXPANDED ROW GLOW ===== */
+.transmission-row-expanded {
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.03) 0%, transparent 40%);
+  border-left: 2px solid rgba(220, 38, 38, 0.25);
+}
+
+/* ===== NAV SCROLL GLOW ===== */
+.nav-scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid rgba(232, 228, 224, 0.04);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(220, 38, 38, 0.02);
+}
+
+/* ===== FOOTER ATMOSPHERIC ===== */
+.footer-glow {
+  position: relative;
+}
+.footer-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.2), transparent);
+}
+.footer-glow::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 20%;
+  right: 20%;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ===== SIGNAL BAR SHIMMER ===== */
+@keyframes signal-shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+.signal-bar-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(220, 38, 38, 0.3) 0%,
+    rgba(220, 38, 38, 0.6) 40%,
+    rgba(220, 38, 38, 0.9) 50%,
+    rgba(220, 38, 38, 0.6) 60%,
+    rgba(220, 38, 38, 0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: signal-shimmer 2.5s ease-in-out infinite;
+}
+
 /* ===== WALLET BTN ===== */
 .wallet-btn {
   position: relative;

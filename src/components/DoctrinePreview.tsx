@@ -38,9 +38,12 @@ export default function DoctrinePreview() {
         <ScrollReveal animation="up" delay={0} className="md:col-span-7">
           <a href="/transmissions" className="group editorial-card block relative bg-surface/40 border border-bone/[0.03] hover:border-crimson/20 p-10 md:p-14 h-full overflow-hidden backdrop-blur-[2px]">
             {/* Huge ghost number */}
-            <span className="absolute -top-4 -right-2 font-heading text-[10rem] md:text-[14rem] text-bone/[0.02] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
+            <span className="absolute -top-4 -right-2 font-heading text-[10rem] md:text-[14rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
               01
             </span>
+
+            {/* Hover inner glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(220,38,38,0.04)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
             <div className="relative">
               <div className="flex items-center gap-3 mb-8">
@@ -77,9 +80,12 @@ export default function DoctrinePreview() {
           {/* Card 2 — offset up for stagger */}
           <ScrollReveal animation="right" delay={0.2} className="md:-mt-12">
             <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.03] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
-              <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.02] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
+              <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
                 02
               </span>
+
+              {/* Hover inner glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(220,38,38,0.03)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
@@ -99,7 +105,7 @@ export default function DoctrinePreview() {
 
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[9px] text-ash/40">{TRANSMISSIONS[1].frequency}</span>
-                  <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 transition-colors">&#8594;</span>
+                  <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 tracking-[0.4em] transition-all duration-500">READ &#8594;</span>
                 </div>
               </div>
 
@@ -110,9 +116,12 @@ export default function DoctrinePreview() {
           {/* Card 3 */}
           <ScrollReveal animation="right" delay={0.4}>
             <a href="/transmissions" className="group editorial-card block relative bg-surface/20 border border-bone/[0.03] hover:border-crimson/20 p-8 md:p-10 overflow-hidden backdrop-blur-[2px]">
-              <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.02] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
+              <span className="absolute -top-2 -right-1 font-heading text-[8rem] text-bone/[0.025] leading-none pointer-events-none select-none group-hover:text-bone/[0.04] transition-colors duration-700">
                 03
               </span>
+
+              {/* Hover inner glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(220,38,38,0.03)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
@@ -132,7 +141,7 @@ export default function DoctrinePreview() {
 
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[9px] text-ash/40">{TRANSMISSIONS[2].frequency}</span>
-                  <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 transition-colors">&#8594;</span>
+                  <span className="font-mono text-[9px] text-crimson/0 group-hover:text-crimson/50 tracking-[0.4em] transition-all duration-500">READ &#8594;</span>
                 </div>
               </div>
 

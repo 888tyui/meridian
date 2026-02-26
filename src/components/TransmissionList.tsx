@@ -126,8 +126,8 @@ export default function TransmissionList() {
           return (
             <article
               key={tx.id}
-              className={`group transmission-row border-t border-bone/[0.06] last:border-b transition-colors duration-500 ${
-                isExpanded ? "bg-surface/20" : ""
+              className={`group transmission-row border-t border-bone/[0.06] last:border-b transition-all duration-500 ${
+                isExpanded ? "transmission-row-expanded" : ""
               }`}
             >
               <button
@@ -158,15 +158,17 @@ export default function TransmissionList() {
                     <span className="font-mono text-[9px] text-ash/30">{tx.frequency}</span>
                     <div className="w-16 h-[3px] bg-bone/[0.04] overflow-hidden rounded-full">
                       <div
-                        className="h-full bg-gradient-to-r from-crimson/30 to-crimson/60 rounded-full signal-bar-fill"
+                        className="h-full rounded-full signal-bar-fill signal-bar-shimmer"
                         style={{ width: `${tx.signal}%` }}
                       />
                     </div>
                   </div>
-                  <div className={`w-6 h-6 flex items-center justify-center border border-bone/[0.06] transition-all duration-500 ${
-                    isExpanded ? "rotate-45 border-crimson/30 bg-crimson/5" : "group-hover:border-bone/15"
+                  <div className={`w-6 h-6 flex items-center justify-center border transition-all duration-700 ${
+                    isExpanded
+                      ? "rotate-45 border-crimson/30 bg-crimson/5 shadow-[0_0_12px_rgba(220,38,38,0.1)]"
+                      : "border-bone/[0.06] group-hover:border-bone/15"
                   }`}>
-                    <span className="text-crimson/50 text-sm leading-none">+</span>
+                    <span className={`text-sm leading-none transition-colors duration-500 ${isExpanded ? "text-crimson/70" : "text-crimson/50"}`}>+</span>
                   </div>
                 </div>
               </button>
@@ -177,14 +179,16 @@ export default function TransmissionList() {
                   <div className="pb-12 md:pl-48">
                     <div className="max-w-2xl">
                       <div className="accent-line mb-10" />
-                      {tx.body.split("\n\n").map((paragraph, pi) => (
-                        <p
-                          key={pi}
-                          className="font-body text-sm md:text-base text-bone/60 leading-[1.9] mb-6 last:mb-0"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
+                      <div className={isExpanded ? "paragraph-stagger" : ""}>
+                        {tx.body.split("\n\n").map((paragraph, pi) => (
+                          <p
+                            key={pi}
+                            className="font-body text-sm md:text-base text-bone/60 leading-[1.9] mb-6 last:mb-0"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
                       <div className="mt-12 pt-8 border-t border-bone/[0.04] flex flex-wrap items-center gap-6">
                         <div className="flex items-center gap-2">
                           <div className="w-1 h-1 bg-crimson/40 rounded-full" />

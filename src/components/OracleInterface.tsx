@@ -219,7 +219,9 @@ export default function OracleInterface() {
           <div
             key={i}
             ref={isCurrent ? latestResponseRef : undefined}
-            className={`mb-16 ${isCurrent ? "response-card-enter" : ""}`}
+            className={`mb-16 ${isCurrent ? "response-card-enter" : ""} ${
+              isCurrent && !isStreaming ? "border-l border-crimson/[0.08]" : ""
+            }`}
           >
             {/* Question */}
             <div className="flex items-start gap-4 mb-8">
@@ -283,7 +285,14 @@ export default function OracleInterface() {
                   {isCurrent && isStreaming ? (
                     <span>
                       {streamedText}
-                      <span className="inline-block w-[2px] h-[1.1em] bg-crimson/70 ml-0.5 animate-pulse align-text-bottom" />
+                      <span
+                        className="inline-block w-[6px] h-[1.1em] ml-0.5 align-text-bottom"
+                        style={{
+                          background: "rgba(220, 38, 38, 0.6)",
+                          boxShadow: "0 0 8px rgba(220, 38, 38, 0.3)",
+                          animation: "typing-blink 0.8s step-end infinite",
+                        }}
+                      />
                     </span>
                   ) : (
                     r.answer
@@ -424,7 +433,7 @@ export default function OracleInterface() {
       )}
 
       {/* ===== INPUT AREA — Ritual Inscription Field ===== */}
-      <div className="sticky bottom-0 pt-12 pb-6 bg-gradient-to-t from-void via-void/95 to-transparent">
+      <div className="sticky bottom-0 pt-16 pb-6 bg-gradient-to-t from-void from-40% via-void/95 via-70% to-transparent">
         {/* Ritual inscription header */}
         <div className="flex items-center gap-3 mb-5 px-1">
           <div className="w-1.5 h-1.5 bg-crimson/20 rotate-45" />
