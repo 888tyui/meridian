@@ -82,8 +82,20 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Social + Coordinates */}
+        {/* $MERIDIAN + Social */}
         <div className="hidden md:flex items-center gap-5">
+          <a
+            href="https://pump.fun/coin/8WR7xdbinNExtkM4JfSC7W2SwZ8QnMNj3ucaqtPopump"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-2 px-3 py-1.5 border border-crimson/20 hover:border-crimson/40 bg-crimson/[0.04] hover:bg-crimson/[0.10] transition-all duration-500"
+          >
+            <div className="w-1.5 h-1.5 bg-crimson rounded-full animate-pulse" />
+            <span className="font-heading text-[11px] tracking-[0.15em] text-crimson/80 group-hover:text-crimson transition-colors duration-400">
+              $MERIDIAN
+            </span>
+          </a>
+          <div className="w-px h-3 bg-bone/[0.06]" />
           <a
             href="https://x.com/meridiandotist"
             target="_blank"
@@ -100,13 +112,6 @@ export default function Navigation() {
           >
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" /></svg>
           </a>
-          <div className="w-px h-3 bg-bone/[0.06]" />
-          <div className="hidden lg:flex items-center gap-2">
-            <div className="w-1 h-1 bg-crimson/30 rounded-full" />
-            <span className="font-mono text-[9px] text-ash/40 tracking-[0.2em]">
-              51.4014° N
-            </span>
-          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -148,11 +153,27 @@ export default function Navigation() {
             </Link>
           ))}
 
+          {/* $MERIDIAN mobile button */}
+          <a
+            href="https://pump.fun/coin/8WR7xdbinNExtkM4JfSC7W2SwZ8QnMNj3ucaqtPopump"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMobile}
+            className="group flex items-center gap-3 px-6 py-3 border border-crimson/25 bg-crimson/[0.06] mt-4"
+            style={{
+              animation: `mobile-menu-item-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${links.length * 0.06}s forwards`,
+              opacity: 0,
+            }}
+          >
+            <div className="w-2 h-2 bg-crimson rounded-full animate-pulse" />
+            <span className="font-heading text-lg tracking-[0.2em] text-crimson">$MERIDIAN</span>
+          </a>
+
           {/* Social links */}
           <div
             className="flex items-center gap-8 mt-4"
             style={{
-              animation: `mobile-menu-item-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${links.length * 0.06}s forwards`,
+              animation: `mobile-menu-item-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${(links.length + 1) * 0.06}s forwards`,
               opacity: 0,
             }}
           >
